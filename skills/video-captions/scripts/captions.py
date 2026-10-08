@@ -34,7 +34,6 @@ def _join(parts, lang):
 
 
 def wrap(tokens: list, max_chars: int, max_lines: int, lang=None) -> list:
-    """Split tokens into <= max_lines balanced lines; returns list of token-index lists."""
     text = _join(tokens, lang)
     n = len(tokens)
     if len(text) <= max_chars or n < 2 or max_lines < 2:

@@ -1,4 +1,3 @@
-"""Build a synthetic talking-head clip: espeak-ng speech with fillers, false starts and long pauses over a test pattern."""
 from __future__ import annotations
 
 import os

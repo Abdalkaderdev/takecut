@@ -1,7 +1,3 @@
-"""Shared helpers for takecut scripts: ffmpeg/ffprobe, timecodes, ranges, EDL resolution, transcripts.
-
-Standard library only so every skill can import it.
-"""
 from __future__ import annotations
 
 import json
@@ -256,7 +252,6 @@ def _abs(base: str, p: str) -> str:
 
 
 def resolve_edl(edl: dict, probes: dict | None = None) -> list:
-    """Return ordered pieces [(src_key, start, end)] in source seconds, frame-snapped."""
     base = edl.get("_dir", ".")
     sources = {k: _abs(base, v) for k, v in edl["sources"].items()}
     if not sources:

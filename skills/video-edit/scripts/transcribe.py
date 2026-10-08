@@ -80,7 +80,6 @@ def preload_cuda_libs():
 
 
 def maybe_fetch_gpu_libs(args):
-    """With an NVIDIA GPU but no cuBLAS/cuDNN, re-run once under uv with the pip CUDA wheels (cached after first use)."""
     if args.api or args.device == "cpu" or os.environ.get("TAKECUT_GPU_REEXEC") or not shutil.which("uv"):
         return
     import ctypes.util
@@ -223,7 +222,6 @@ def api(src: Path, args, duration: float) -> tuple[list, str, str]:
 
 
 def glue_pieces(words: list, lang) -> list:
-    """Whisper sometimes splits a word ("real" + "-life"); merge pieces without a leading space."""
     if lang in NO_SPACE_LANGS:
         return words
     out = []

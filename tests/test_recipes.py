@@ -1,4 +1,3 @@
-"""Run every bash block in skills/video-ffmpeg/references/recipes.md against generated fixtures."""
 import re
 import shlex
 import subprocess

@@ -1,8 +1,3 @@
-"""End to end: synthetic talking clip -> transcribe -> cleanup -> render -> captions -> shorts.
-
-Needs ffmpeg, espeak-ng and uv; downloads a small Whisper model on first run.
-Model/device override: TAKECUT_TEST_MODEL (default base), TAKECUT_TEST_DEVICE (default auto).
-"""
 import json
 import os
 import shutil

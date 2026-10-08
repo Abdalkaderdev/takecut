@@ -48,7 +48,6 @@ class Detector:
             self.haar = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 
     def __call__(self, frame) -> list:
-        """Return [(cx, cy, w, h, score)] in frame pixels."""
         if self.kind == "yunet":
             _, faces = self.net.detect(frame)
             return [(f[0] + f[2] / 2, f[1] + f[3] / 2, f[2], f[3], float(f[-1])) for f in (faces if faces is not None else [])]
@@ -99,7 +98,6 @@ def track(path: Path, sample_fps: float = 6.0, det_width: int = 640):
 
 
 def smooth_path(times, xs, crop_frac: float, deadzone: float = 0.06, max_speed: float = 0.35, fallback: float = 0.5):
-    """xs: face centre as fraction of width (nan = no face). Returns crop centre fraction per sample."""
     import numpy as np
 
     if len(xs) == 0 or np.all(np.isnan(xs)):
