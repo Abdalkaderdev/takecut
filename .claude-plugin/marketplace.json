@@ -1,0 +1,15 @@
+{
+  "name": "takecut",
+  "description": "Transcript-driven video editing skills for coding agents.",
+  "owner": {
+    "name": "Abdalkader Alhamoud",
+    "url": "https://abdalkader.dev"
+  },
+  "plugins": [
+    {
+      "name": "takecut",
+      "source": "./",
+      "description": "Edit real video through its transcript: local transcription, silence/filler/retake cleanup, face-tracked vertical shorts, styled captions and tested ffmpeg recipes."
+    }
+  ]
+}

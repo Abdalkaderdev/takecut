@@ -1,0 +1,14 @@
+{
+  "name": "takecut",
+  "displayName": "takecut",
+  "version": "0.1.0",
+  "description": "Edit real video through its transcript: local transcription, silence/filler/retake cleanup, face-tracked vertical shorts, styled captions and tested ffmpeg recipes.",
+  "author": {
+    "name": "Abdalkader Alhamoud",
+    "url": "https://abdalkader.dev"
+  },
+  "homepage": "https://github.com/Abdalkaderdev/takecut",
+  "repository": "https://github.com/Abdalkaderdev/takecut",
+  "license": "MIT",
+  "keywords": ["video", "ffmpeg", "whisper", "transcript", "captions", "subtitles", "shorts", "editing", "agent-skills"]
+}
