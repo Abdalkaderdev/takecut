@@ -1,0 +1,7 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["e2e: end-to-end run with espeak-ng, ffmpeg and a Whisper model (slow, downloads a model)"]
+
+[tool.ruff]
+line-length = 140
+target-version = "py310"
