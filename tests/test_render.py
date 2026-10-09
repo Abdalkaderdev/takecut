@@ -13,6 +13,12 @@ def ff(*args, cwd=None):
 
 
 def decoded_duration(path, stream):
+    if stream == "v":
+        p = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-count_frames", "-show_entries",
+                            "stream=nb_read_frames,r_frame_rate", "-of", "json", str(path)], capture_output=True, text=True)
+        st = json.loads(p.stdout)["streams"][0]
+        num, den = st["r_frame_rate"].split("/")
+        return int(st["nb_read_frames"]) * int(den) / int(num)
     p = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-map", f"0:{stream}", "-f", "null", "-"], capture_output=True, text=True)
     h, m, s = re.findall(r"time=(\d+):(\d+):([\d.]+)", p.stderr)[-1]
     return int(h) * 3600 + int(m) * 60 + float(s)
